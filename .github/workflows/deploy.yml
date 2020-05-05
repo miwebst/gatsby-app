@@ -28,6 +28,9 @@ jobs:
         api_location: 'api' # Api source code path - optional
         app_artifact_location: 'public' # Built app content directory - optional
         ###### End of Repository/Build Configurations ######
+      env: 
+        play_secret: ${{ secrets.PLAY }}
+        build_sha: 1234
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
